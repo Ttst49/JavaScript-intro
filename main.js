@@ -7,7 +7,7 @@ let resultat= word.replace("ou","u")
 
 let wordArray = word.split("")
 
-let resultatTrois = wordArray.splice(4,1,"")
+//let resultatTrois = wordArray.splice(4,1,"")
 
 boom = wordArray.join("")
 
@@ -28,16 +28,45 @@ function mycall(){
 
 let mots=["bonjour", "hello", "hola","你好"]
 
-function remplaceMots(mots){
-    for(i=0;i<=4;i++) {
-        if (i > 4) {
-            i = 0
-        }
-        paragraphe.replaceWith(mots[i])
-    }
+//function remplaceMots(change){
+ //   for(i=0;i<4;i++) {
+   //     console.log(change[i])
+     //   paragraphe.textContent= change[i]
+
+       // if (change[i]==="你好") {
+         //   remplaceMots(change)
+        //}
+
+    //}
+
+//}
+
+//setInterval(remplaceMots(mots), 2000)
+
+for(let i=0;i<mots.length; i++){
+    setTimeout(()=>{
+        document.querySelector('.rouge').textContent =mots[i]
+    },1000)
 }
 
-setInterval(remplaceMots, 2000)
+
+let unephrase="Le doux dos dodu du dindon farçi se dandinait doucement"
+
+let laphrase=unephrase.split("")
+
+let para= document.createElement("p");
+para.textContent = "Hey"
+console.log(para)
+
+let body= document.querySelector("body")
+    body.appendChild(para)
+
+laphrase.forEach((mot)=>{
+  let paragraph= document.createElement("p")
+    paragraph.textContent= mot
+    body.appendChild(paragraph)
+})
+
 
 
 //paragraphe.classList.toggle('bleu',)
