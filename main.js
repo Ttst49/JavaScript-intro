@@ -52,7 +52,7 @@ for(let i=0;i<mots.length; i++){
 
 let unephrase="Le doux dos dodu du dindon farçi se dandinait doucement"
 
-let laphrase=unephrase.split("")
+let TableaudeMot=unephrase.split(" ")
 
 let para= document.createElement("p");
 para.textContent = "Hey"
@@ -61,12 +61,21 @@ console.log(para)
 let body= document.querySelector("body")
     body.appendChild(para)
 
-laphrase.forEach((mot)=>{
-  let paragraph= document.createElement("p")
-    paragraph.textContent= mot
-    body.appendChild(paragraph)
-})
+//TableaudeMot.forEach((mots)=>{
+    //let paragraph= document.createElement("p")
+    //paragraph.textContent= mots
+    //body.appendChild(paragraph)
+//})
 
-
+for(let i=0;i<TableaudeMot.length;i++){
+    let paragraphe = document.createElement("p")
+    if(TableaudeMot[i] === "dindon"){
+        paragraphe.textContent = "poulet"
+    }
+    else {
+        paragraphe.textContent = TableaudeMot[i]
+    }
+    body.appendChild(paragraphe)
+}
 
 //paragraphe.classList.toggle('bleu',)
